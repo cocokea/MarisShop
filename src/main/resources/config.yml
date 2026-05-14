@@ -1,0 +1,84 @@
+# ══════════════════════════════════════════════════
+#  SilShop — config.yml
+# ══════════════════════════════════════════════════
+
+# Tiêu đề các GUI
+titles:
+  category: "ꜱʜᴏᴘ"
+  shop: "ꜱʜᴏᴘ - {currentCategory}"
+  confirm: "xáᴄ ɴʜậɴ ᴍᴜᴀ"
+
+# Các nút trong GUI confirm
+gui:
+  back:
+    position: 18
+    material: RED_STAINED_GLASS_PANE
+    name: "&#FF0000ǫᴜᴀʏ ʟạɪ"
+
+  cancel:
+    position: 21
+    material: RED_STAINED_GLASS_PANE
+    name: "&#FF0000ǫᴜᴀʏ ʟạɪ"
+
+  confirm:
+    position: 23
+    material: LIME_STAINED_GLASS_PANE
+    name: "&axáᴄ ɴʜậɴ"
+
+  remove:
+    max:
+      position: 9
+      material: RED_STAINED_GLASS_PANE
+      name: "&#FF0000xᴏá {maxAmount}"
+    ten:
+      position: 10
+      material: RED_STAINED_GLASS_PANE
+      name: "&#FF0000xᴏá 10"
+    one:
+      position: 11
+      material: RED_STAINED_GLASS_PANE
+      name: "&#FF0000xᴏá 1"
+
+  add:
+    one:
+      position: 15
+      material: LIME_STAINED_GLASS_PANE
+      name: "&#00FF83ᴛʜêᴍ 1"
+    ten:
+      position: 16
+      material: LIME_STAINED_GLASS_PANE
+      name: "&#00FF83ᴛʜêᴍ 10"
+    max:
+      position: 17
+      material: LIME_STAINED_GLASS_PANE
+      name: "&#00FF83ᴛʜêᴍ {maxAmount}"
+
+# Lore tự động được thêm vào mỗi shop item trong GUI
+# {price_money}  → giá tiền (Vault)
+# {price_shards} → giá shards
+# Để rỗng [] nếu không muốn lore tự động
+item_lore:
+  - "&fGiá mua: &#4DFF8C${price_money}"
+  - "&fGiá mua: &#A303F9{price_shards} &lShards"   # bỏ comment nếu dùng shards
+
+# Thông báo — true/false để bật/tắt từng loại
+messages:
+  enabled: false
+  purchase:
+    success:
+      money:
+        enabled: true
+        text: "&aMua thành công &f{amount}x {item} &avới giá &f${price}&a!"
+      shards:
+        enabled: true
+        text: "&aMua thành công &f{amount}x {item} &avới &f{price} shards&a!"
+    failure:
+      money:
+        enabled: true
+        text: "&cKhông đủ tiền!"
+      shards:
+        enabled: true
+        text: "&cKhông đủ shards!"
+    inventory_full:
+      enabled: true
+      text: "&cTúi đồ đầy!"

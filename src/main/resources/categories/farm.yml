@@ -1,0 +1,118 @@
+title: "ꜰᴀʀᴍ"
+
+main:
+  position: 15
+  material: BAMBOO
+  name: "#FFFA00ꜰᴀʀᴍ"
+  lore:
+    - "&fCick để xem shop farm"
+
+items:
+  DEAD_BUSH:
+    position: 3
+    material: DEAD_BUSH
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  WHEAT_SEEDS:
+    position: 4
+    material: WHEAT_SEEDS
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  MELON_SEEDS:
+    position: 5
+    material: MELON_SEEDS
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  TUBE_CORAL_BLOCK:
+    position: 9
+    material: TUBE_CORAL_BLOCK
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  MUD:
+    position: 10
+    material: MUD
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  ICE:
+    position: 11
+    material: ICE
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  SEA_PICKLE:
+    position: 12
+    material: SEA_PICKLE
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  GLOW_BERRIES:
+    position: 13
+    material: GLOW_BERRIES
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  CHORUS_FRUIT:
+    position: 14
+    material: CHORUS_FRUIT
+    name: ""
+    price: 10
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  BAMBOO:
+    position: 15
+    material: DEAD_BUSH
+    name: ""
+    price: 150
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  SUGAR_CANE:
+    position: 16
+    material: SUGAR_CANE
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  CACTUS:
+    position: 17
+    material: CACTUS
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 

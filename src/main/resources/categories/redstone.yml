@@ -1,0 +1,136 @@
+# ══════════════════════════════════════════════════
+#  CATEGORY FILE — weapons.yml
+# ══════════════════════════════════════════════════
+#
+#  FIELDS MỖI ITEM:
+#    position       — slot trong GUI (0-26 với 27 slots)
+#    material       — vật phẩm hiển thị + tặng nếu commands rỗng
+#    name           — tên hiển thị (để rỗng "" = tự lấy tên material)
+#    price          — giá tiền (Vault). 0 = miễn phí
+#    price_shards   — giá shards (PAPI). 0 = không dùng shards
+#    shard_placeholder — biến PAPI trả về số shards của player
+#                        (bắt buộc nếu price_shards > 0)
+#    initial_amount — số lượng mặc định khi mở confirm GUI
+#    commands       — [] = tặng item trực tiếp | có lệnh = chạy lệnh, không tặng item
+#                     placeholders: {player}, {amount}, {price}
+#
+# ══════════════════════════════════════════════════
+
+title: "ʀᴇᴅꜱᴛᴏɴᴇ"
+
+main:
+  position: 10
+  material: REDSTONE
+  name: "#FFFA00ʀᴇᴅꜱᴛᴏɴᴇ"
+  lore:
+    - "&fCick để xem shop redstone"
+
+items:
+  piston:
+    position: 3
+    material: PISTON
+    name: ""
+    price: 150
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  crafter:
+    position: 4
+    material: CRAFTER
+    name: ""
+    price: 220
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  sticky_piston:
+    position: 5
+    material: STICKY_PISTON
+    name: ""
+    price: 200
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  redstone:
+    position: 9
+    material: REDSTONE
+    name: ""
+    price: 90
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  dropper:
+    position: 10
+    material: DROPPER
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  redstone_block:
+    position: 11
+    material: REDSTONE_BLOCK
+    name: ""
+    price: 900
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  disp:
+    position: 12
+    material: DISPENSER
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  redstone_lamp:
+    position: 13
+    material: REDSTONE_LAMP
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  observer:
+    position: 14
+    material: OBSERVER
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  hopper:
+    position: 15
+    material: HOPPER
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  repeater:
+    position: 16
+    material: REPEATER
+    name: ""
+    price: 200
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  comparator:
+    position: 17
+    material: COMPARATOR
+    name: ""
+    price: 180
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []

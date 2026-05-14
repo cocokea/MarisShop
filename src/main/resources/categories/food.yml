@@ -1,0 +1,91 @@
+title: "ꜰᴏᴏᴅ"
+
+main:
+  position: 14
+  material: COOKED_BEEF
+  name: "#FFFA00ꜰᴏᴏᴅ"
+  lore:
+    - "&fCick để xem shop food"
+
+items:
+  POTATO:
+    position: 9
+    material: POTATO
+    name: ""
+    price: 75
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  SWEET_BERRIES:
+    position: 10
+    material: SWEET_BERRIES
+    name: ""
+    price: 50
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  MELON_SLICE:
+    position: 11
+    material: MELON_SLICE
+    name: ""
+    price: 10
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  CARROT:
+    position: 12
+    material: CARROT
+    name: ""
+    price: 65
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  APPLE:
+    position: 13
+    material: APPLE
+    name: ""
+    price: 30
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  COOKED_CHICKEN:
+    position: 14
+    material: COOKED_CHICKEN
+    name: ""
+    price: 30
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  COOKED_BEEF:
+    position: 15
+    material: COOKED_BEEF
+    name: ""
+    price: 35
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  GOLDEN_CARROT:
+    position: 16
+    material: GOLDEN_CARROT
+    name: ""
+    price: 50
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  GOLDEN_APPLE:
+    position: 17
+    material: GOLDEN_APPLE
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []

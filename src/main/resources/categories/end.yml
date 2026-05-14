@@ -1,0 +1,91 @@
+title: "ᴇɴᴅ"
+
+main:
+  position: 11
+  material: END_STONE
+  name: "#FFFA00ᴛʜᴇ ᴇɴᴅ"
+  lore:
+    - "&fCick để xem shop end"
+
+items:
+  enderchest:
+    position: 9
+    material: ENDER_CHEST
+    name: ""
+    price: 2500
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  enderpearl:
+    position: 10
+    material: ENDER_PEARL
+    name: ""
+    price: 75
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  endstone:
+    position: 11
+    material: END_STONE
+    name: ""
+    price: 8
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  dragon:
+    position: 12
+    material: DRAGON_BREATH
+    name: ""
+    price: 1000
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  endrod:
+    position: 13
+    material: END_ROD
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  chorus:
+    position: 14
+    material: CHORUS_FRUIT
+    name: ""
+    price: 10
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  pop:
+    position: 15
+    material: POPPED_CHORUS_FRUIT
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  shulker_shell:
+    position: 16
+    material: SHULKER_SHELL
+    name: ""
+    price: 350
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  shulker:
+    position: 17
+    material: SHULKER_BOX
+    name: ""
+    price: 1000
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 

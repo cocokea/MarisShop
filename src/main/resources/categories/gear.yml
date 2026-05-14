@@ -1,0 +1,130 @@
+title: "ɢᴇᴀʀ"
+
+main:
+  position: 13
+  material: TOTEM_OF_UNDYING
+  name: "#FFFA00ɢᴇᴀʀ"
+  lore:
+    - "&fCick để xem shop gear"
+
+items:
+  bomb:
+    position: 2
+    material: TNT
+    name: "&#FF0000ʙᴏᴍ ᴄảᴍ ᴛử"
+    price: 20000
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands:
+      - 'sbb give {player} {amount}'
+  netherite:
+    position: 3
+    material: NETHERITE_SWORD
+    name: ""
+    price: 5000
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  WATER:
+    position: 4
+    material: WATER_BUCKET
+    name: ""
+    price: 300
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+    
+  LAVA:
+    position: 5
+    material: LAVA_BUCKET
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  rail:
+    position: 9
+    material: RAIL
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  winds:
+    position: 10
+    material: WIND_CHARGE
+    name: ""
+    price: 350
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  shields:
+    position: 11
+    material: SHIELD
+    name: ""
+    price: 500
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  cobwebs:
+    position: 12
+    material: COBWEB
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  totems:
+    position: 13
+    material: TOTEM_OF_UNDYING
+    name: ""
+    price: 1000
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  enders:
+    position: 14
+    material: ENDER_PEARL
+    name: ""
+    price: 75
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  goldens:
+    position: 15
+    material: GOLDEN_APPLE
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+    
+  experiences:
+    position: 16
+    material: EXPERIENCE_BOTTLE
+    name: ""
+    price: 100
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  tipped:
+    position: 17
+    material: ARROW
+    name: ""
+    price: 250
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 

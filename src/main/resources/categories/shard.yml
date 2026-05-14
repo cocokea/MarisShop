@@ -1,0 +1,164 @@
+title: "ꜱʜᴀʀᴅ"
+
+main:
+  position: 16
+  material: AMETHYST_SHARD
+  name: "#FFFA00ꜱʜᴀʀᴅ"
+  lore:
+    - "&fCick để xem shop shard"
+
+items:
+  common:
+    position: 2
+    material: TRIPWIRE_HOOK
+    name: "&aᴄᴏᴍᴍᴏɴ ᴋᴇʏ"
+    price: 0
+    price_shards: 200
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'silcratecore key give common {player} {amount}'
+      - "silcratecore take shards {player} {price}"
+  crimson:
+    position: 3
+    material: TRIPWIRE_HOOK
+    name: "&#FF0000ᴄʀɪᴍꜱᴏɴ ᴋᴇʏ"
+    price: 0
+    price_shards: 1500
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'silcratecore key give crimson {player} {amount}'
+      - "silcratecore take shards {player} {price}"
+  prime:
+    position: 4
+    material: TRIPWIRE_HOOK
+    name: "&#00B5FFᴘʀɪᴍᴇ ᴋᴇʏ"
+    price: 0
+    price_shards: 1500
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'silcratecore key give prime {player} {amount}'
+      - "silcratecore take shards {player} {price}"
+  gold:
+    position: 5
+    material: TRIPWIRE_HOOK
+    name: "&eɢᴏʟᴅ ᴋᴇʏ"
+    price: 0
+    price_shards: 1500
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'silcratecore key give gold {player} {amount}'
+      - "silcratecore take shards {player} {price}"
+  amethyst:
+    position: 6
+    material: TRIPWIRE_HOOK
+    name: "&#AB00FFᴀᴍᴇᴛʜʏꜱᴛ ᴋᴇʏ"
+    price: 0
+    price_shards: 3000
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'silcratecore key give amethyst {player} {amount}'
+      - "silcratecore take shards {player} {price}"
+  pig:
+    position: 9
+    material: SPAWNER
+    name: "&dPig Spawner"
+    price: 0
+    price_shards: 250
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} pig {amount}'
+      - "silcratecore take shards {player} {price}"
+  cow:
+    position: 10
+    material: SPAWNER
+    name: "&dCow Spawner"
+    price: 0
+    price_shards: 350
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} cow {amount}'
+      - "silcratecore take shards {player} {price}"
+  zombie:
+    position: 11
+    material: SPAWNER
+    name: "&dZombie Spawner"
+    price: 0
+    price_shards: 400
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} zombie {amount}'
+      - "silcratecore take shards {player} {price}"
+  skeleton:
+    position: 12
+    material: SPAWNER
+    name: "&dSkeleton Spawner"
+    price: 0
+    price_shards: 500
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} skeleton {amount}'
+      - "silcratecore take shards {player} {price}"
+  spider:
+    position: 13
+    material: SPAWNER
+    name: "&dSpider Spawner"
+    price: 0
+    price_shards: 750
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} spider {amount}'
+      - "silcratecore take shards {player} {price}"
+  creeper:
+    position: 14
+    material: SPAWNER
+    name: "&dCreeper Spawner"
+    price: 0
+    price_shards: 600
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} creeper {amount}'
+      - "silcratecore take shards {player} {price}"
+  zomfied:
+    position: 15
+    material: SPAWNER
+    name: "&dZombified Spawner"
+    price: 0
+    price_shards: 750
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} zombified_piglin {amount}'
+      - "silcratecore take shards {player} {price}"
+  blaze:
+    position: 16
+    material: SPAWNER
+    name: "&dBlaze Spawner"
+    price: 0
+    price_shards: 1000
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} blaze {amount}'
+      - "silcratecore take shards {player} {price}"
+  iron_golem:
+    position: 17
+    material: SPAWNER
+    name: "&dIron Golem Spawner"
+    price: 0
+    price_shards: 1500
+    shard_placeholder: "%shards_value%"
+    initial_amount: 1
+    commands: 
+      - 'ss give spawner {player} iron_golem {amount}'
+      - "silcratecore take shards {player} {price}"

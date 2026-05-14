@@ -1,0 +1,92 @@
+title: "ɴᴇᴛʜᴇʀ"
+
+main:
+  position: 12
+  material: NETHERRACK
+  name: "#FFFA00ɴᴇᴛʜᴇʀᴇ"
+  lore:
+    - "&fCick để xem shop nether"
+
+items:
+  blaze:
+    position: 9
+    material: BLAZE_ROD
+    name: ""
+    price: 150
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  netherwart:
+    position: 10
+    material: NETHER_WART
+    name: ""
+    price: 15
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  glow:
+    position: 11
+    material: GLOWSTONE_DUST
+    name: ""
+    price: 15
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  magma:
+    position: 12
+    material: MAGMA_CREAM
+    name: ""
+    price: 15
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  ghast:
+    position: 13
+    material: GHAST_TEAR
+    name: ""
+    price: 350
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: [] 
+  quartz:
+    position: 14
+    material: QUARTZ
+    name: ""
+    price: 15
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  soul:
+    position: 15
+    material: SOUL_SAND
+    name: ""
+    price: 50
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+    
+  magmaa:
+    position: 16
+    material: MAGMA_BLOCK
+    name: ""
+    price: 35
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
+  cry:
+    position: 17
+    material: CRYING_OBSIDIAN
+    name: ""
+    price: 150
+    price_shards: 0
+    shard_placeholder: ""
+    initial_amount: 1
+    commands: []
