@@ -19,6 +19,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ConfirmGUI extends InventoryGUI {
 
@@ -57,62 +58,71 @@ public class ConfirmGUI extends InventoryGUI {
         return config.getString("gui." + path + ".name", path);
     }
 
+    private List<String> getConfigLore(String path) {
+        return config.getStringList("gui." + path + ".lore");
+    }
+
     @Override
     public void decorate(Player player) {
         int maxStack = shopItem.getItem().getType().getMaxStackSize();
+        boolean amountEnabled = shopItem.isAmountEnabled();
 
         addButton(13, new InventoryButton()
                 .creator(p -> shopItem.getItem(currentAmount))
                 .consumer(event -> {}));
 
-        addButton(getConfigPosition("remove.max"), new InventoryButton()
-                .creator(p -> currentAmount > 1
-                        ? guiItem(getConfigMaterial("remove.max"),
-                        getConfigName("remove.max").replace("{maxAmount}", String.valueOf(maxStack)))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> changeAmount(player, -maxStack)));
+        if (amountEnabled) {
+            addButton(getConfigPosition("remove.max"), new InventoryButton()
+                    .creator(p -> currentAmount > 1
+                            ? guiItem(getConfigMaterial("remove.max"),
+                            getConfigName("remove.max").replace("{maxAmount}", String.valueOf(maxStack)),
+                            getConfigLore("remove.max"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> changeAmount(player, -maxStack)));
 
-        addButton(getConfigPosition("remove.ten"), new InventoryButton()
-                .creator(p -> currentAmount > 10
-                        ? guiItem(getConfigMaterial("remove.ten"), getConfigName("remove.ten"))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> changeAmount(player, -10)));
+            addButton(getConfigPosition("remove.ten"), new InventoryButton()
+                    .creator(p -> currentAmount > 10
+                            ? guiItem(getConfigMaterial("remove.ten"), getConfigName("remove.ten"), getConfigLore("remove.ten"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> changeAmount(player, -10)));
 
-        addButton(getConfigPosition("remove.one"), new InventoryButton()
-                .creator(p -> currentAmount > 1
-                        ? guiItem(getConfigMaterial("remove.one"), getConfigName("remove.one"))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> changeAmount(player, -1)));
+            addButton(getConfigPosition("remove.one"), new InventoryButton()
+                    .creator(p -> currentAmount > 1
+                            ? guiItem(getConfigMaterial("remove.one"), getConfigName("remove.one"), getConfigLore("remove.one"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> changeAmount(player, -1)));
 
-        addButton(getConfigPosition("add.one"), new InventoryButton()
-                .creator(p -> currentAmount < maxStack
-                        ? guiItem(getConfigMaterial("add.one"), getConfigName("add.one"))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> changeAmount(player, 1)));
+            addButton(getConfigPosition("add.one"), new InventoryButton()
+                    .creator(p -> currentAmount < maxStack
+                            ? guiItem(getConfigMaterial("add.one"), getConfigName("add.one"), getConfigLore("add.one"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> changeAmount(player, 1)));
 
-        addButton(getConfigPosition("add.ten"), new InventoryButton()
-                .creator(p -> (currentAmount + 10) <= maxStack
-                        ? guiItem(getConfigMaterial("add.ten"), getConfigName("add.ten"))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> changeAmount(player, 10)));
+            addButton(getConfigPosition("add.ten"), new InventoryButton()
+                    .creator(p -> (currentAmount + 10) <= maxStack
+                            ? guiItem(getConfigMaterial("add.ten"), getConfigName("add.ten"), getConfigLore("add.ten"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> changeAmount(player, 10)));
 
-        addButton(getConfigPosition("add.max"), new InventoryButton()
-                .creator(p -> currentAmount < maxStack
-                        ? guiItem(getConfigMaterial("add.max"),
-                        getConfigName("add.max").replace("{maxAmount}", String.valueOf(maxStack)))
-                        : new ItemStack(Material.AIR))
-                .consumer(event -> setAmount(player, maxStack)));
+            addButton(getConfigPosition("add.max"), new InventoryButton()
+                    .creator(p -> currentAmount < maxStack
+                            ? guiItem(getConfigMaterial("add.max"),
+                            getConfigName("add.max").replace("{maxAmount}", String.valueOf(maxStack)),
+                            getConfigLore("add.max"))
+                            : new ItemStack(Material.AIR))
+                    .consumer(event -> setAmount(player, maxStack)));
+        }
 
-        addButton(getConfigPosition("cancel"), new InventoryButton()
-                .creator(p -> guiItem(getConfigMaterial("cancel"), getConfigName("cancel")))
+        addButton(amountEnabled ? getConfigPosition("cancel") : 11, new InventoryButton()
+                .creator(p -> guiItem(getConfigMaterial("cancel"), getConfigName("cancel"), getConfigLore("cancel")))
                 .consumer(event -> {
                     MarisShop.getSoundManager().play(player, SoundManager.SoundType.CLICK);
                     MarisShop.getGUIManager().openGUI(
                             new ShopGUI(category, ShopManager.getInstance().getShopTitle(category)), player);
                 }));
 
-        addButton(getConfigPosition("confirm"), new InventoryButton()
-                .creator(p -> guiItem(getConfigMaterial("confirm"), getConfigName("confirm")))
+        addButton(amountEnabled ? getConfigPosition("confirm") : 15, new InventoryButton()
+                .creator(p -> guiItem(getConfigMaterial("confirm"), getConfigName("confirm"), getConfigLore("confirm")))
                 .consumer(event -> handlePurchase(player)));
 
         super.decorate(player);
@@ -201,6 +211,7 @@ public class ConfirmGUI extends InventoryGUI {
         sendMsg(player, messagePath, finalPrice);
         MarisShop.getSoundManager().play(player, SoundManager.SoundType.PURCHASE_SUCCESS);
         shopItem.deliverPurchase(player, currentAmount);
+        MarisShop.getInstance().recordPurchaseAsync(player.getUniqueId(), finalPrice);
     }
 
     private void sendMsg(Player player, String path, double finalPrice) {
@@ -247,11 +258,14 @@ public class ConfirmGUI extends InventoryGUI {
         decorate(player);
     }
 
-    private ItemStack guiItem(Material material, String name) {
+    private ItemStack guiItem(Material material, String name, List<String> lore) {
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             meta.setDisplayName(ChatUtil.c(name));
+            if (lore != null && !lore.isEmpty()) {
+                meta.setLore(ChatUtil.c(lore));
+            }
             item.setItemMeta(meta);
         }
         return item;

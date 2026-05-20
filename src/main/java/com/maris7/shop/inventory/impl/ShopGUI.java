@@ -36,7 +36,7 @@ public class ShopGUI extends InventoryGUI {
                                 MarisShop.getSoundManager().play(player, SoundManager.SoundType.CLICK);
                                 MarisShop.getGUIManager().openGUI(
                                         new ConfirmGUI(shopItem, category,
-                                                ShopManager.getInstance().getConfirmTitle(shopItem.getItem().getType())),
+                                                ShopManager.getInstance().getConfirmTitle(shopItem)),
                                         player);
                             })));
         }

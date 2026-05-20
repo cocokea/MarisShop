@@ -1,3 +1,5 @@
+update-checker: true
+
 # ══════════════════════════════════════════════════
 #  SilShop — config.yml
 # ══════════════════════════════════════════════════
@@ -6,7 +8,7 @@
 titles:
   category: "ꜱʜᴏᴘ"
   shop: "ꜱʜᴏᴘ - {currentCategory}"
-  confirm: "xáᴄ ɴʜậɴ ᴍᴜᴀ"
+  confirm: "&8ʙᴜʏɪɴɢ {currentItem}"
 
 # Các nút trong GUI confirm
 gui:
@@ -82,3 +84,13 @@ messages:
     inventory_full:
       enabled: true
       text: "&cTúi đồ đầy!"
+
+database:
+  pool-size: 1
+  mysql:
+    enabled: false
+    host: localhost
+    port: 3306
+    database: marisshop
+    username: root
+    password: ""

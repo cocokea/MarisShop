@@ -5,10 +5,12 @@ import com.maris7.shop.enums.DirectorySelector;
 import com.maris7.shop.objectholders.CategoryItem;
 import com.maris7.shop.objectholders.ConfigItem;
 import com.maris7.shop.objectholders.ShopItem;
+import com.maris7.shop.utils.ChatUtil;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.potion.PotionType;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -75,15 +77,18 @@ public class ShopManager {
 
                     Material mat   = parseMaterial(cfg.getString(base + "material", "STONE"), file.getName() + " item:" + key);
                     String name    = cfg.getString(base + "name", "");          // "" = auto from material
+                    List<String> lore = cfg.getStringList(base + "lore");
                     int price      = cfg.getInt(base + "price", 0);
                     int priceShards = cfg.getInt(base + "price_shards", 0);
                     String shardPh  = cfg.getString(base + "shard_placeholder", "");
+                    boolean amountEnabled = !cfg.contains(base + "amount") || cfg.getBoolean(base + "amount", true);
                     int initAmount  = cfg.getInt(base + "initial_amount", 1);
                     int itemPos     = cfg.getInt(base + "position", 0);
                     List<String> commands = cfg.getStringList(base + "commands");
+                    PotionType potionType = parsePotionType(cfg.getString(base + "potion_type", ""), file.getName() + " item:" + key);
 
-                    itemList.add(new ShopItem(mat, name, price, priceShards, shardPh,
-                            initAmount, itemPos, commands));
+                    itemList.add(new ShopItem(mat, name, lore, price, priceShards, shardPh,
+                            amountEnabled, initAmount, itemPos, commands, potionType));
                 }
             }
             shopItems.put(displayTitle, itemList);
@@ -116,6 +121,18 @@ public class ShopManager {
         }
     }
 
+    private PotionType parsePotionType(String name, String context) {
+        if (name == null || name.isBlank()) {
+            return null;
+        }
+        try {
+            return PotionType.valueOf(name.trim().toUpperCase());
+        } catch (IllegalArgumentException exception) {
+            MarisShop.getInstance().getLogger().warning("Invalid potion_type '" + name + "' in " + context + ", ignoring metadata");
+            return null;
+        }
+    }
+
     // ── Getters ────────────────────────────────────────
 
     public List<CategoryItem>          getCategoryItems() { return categoryItems; }
@@ -123,7 +140,13 @@ public class ShopManager {
     public ConfigItem                  getBackItem()      { return backItem; }
     public String getCategoryTitle()                      { return categoryTitle; }
     public String getShopTitle(String category)           { return shopTitle.replace("{currentCategory}", category); }
-    public String getConfirmTitle(Material material)      { return confirmTitle.replace("{currentItem}", formatMaterialName(material)); }
+    public String getConfirmTitle(ShopItem shopItem) {
+        String source = shopItem.getDisplayName();
+        String itemName = (source == null || source.isBlank())
+            ? formatMaterialName(shopItem.getMaterial())
+            : ChatUtil.strip(source);
+        return confirmTitle.replace("{currentItem}", toSmallCaps(itemName));
+    }
 
     /**
      * Lore tự động từ config.yml item_lore.
@@ -159,5 +182,48 @@ public class ShopManager {
             }
         }
         return sb.toString();
+    }
+
+    public static String toSmallCaps(String input) {
+        if (input == null || input.isEmpty()) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder(input.length());
+        for (char character : input.toCharArray()) {
+            builder.append(toSmallCap(character));
+        }
+        return builder.toString();
+    }
+
+    private static char toSmallCap(char character) {
+        return switch (Character.toLowerCase(character)) {
+            case 'a' -> 'ᴀ';
+            case 'b' -> 'ʙ';
+            case 'c' -> 'ᴄ';
+            case 'd' -> 'ᴅ';
+            case 'e' -> 'ᴇ';
+            case 'f' -> 'ꜰ';
+            case 'g' -> 'ɢ';
+            case 'h' -> 'ʜ';
+            case 'i' -> 'ɪ';
+            case 'j' -> 'ᴊ';
+            case 'k' -> 'ᴋ';
+            case 'l' -> 'ʟ';
+            case 'm' -> 'ᴍ';
+            case 'n' -> 'ɴ';
+            case 'o' -> 'ᴏ';
+            case 'p' -> 'ᴘ';
+            case 'q' -> 'ǫ';
+            case 'r' -> 'ʀ';
+            case 's' -> 'ꜱ';
+            case 't' -> 'ᴛ';
+            case 'u' -> 'ᴜ';
+            case 'v' -> 'ᴠ';
+            case 'w' -> 'ᴡ';
+            case 'x' -> 'x';
+            case 'y' -> 'ʏ';
+            case 'z' -> 'ᴢ';
+            default -> character;
+        };
     }
 }

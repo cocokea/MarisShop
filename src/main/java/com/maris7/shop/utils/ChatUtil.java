@@ -27,4 +27,8 @@ public class ChatUtil {
     public static List<String> c(List<String> list) {
         return list.stream().map(ChatUtil::c).collect(Collectors.toList());
     }
+
+    public static String strip(String text) {
+        return text == null ? "" : ChatColor.stripColor(c(text));
+    }
 }
